@@ -1,9 +1,13 @@
+import 'package:cosmic_beuty/domain/controllers/sesion_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key, required this.title}) : super(key: key);
 
   final String title;
+  
+  
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -12,12 +16,14 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   void _login() {
     setState(() {
-      Navigator.pushNamed(context, '/home');
+      Get.toNamed('/home');
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    // Obtener Controlador GetX
+    SesionController ct = Get.find();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
@@ -54,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Container(
               margin: const EdgeInsets.all(20.0),
               child: const TextField(
+                obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Contraseña',
@@ -75,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
               child: const Text('Registrar'),
               color: Colors.pinkAccent,
               onPressed: () {
-                Navigator.pushNamed(context, '/register');
+                 Get.toNamed('/register');
               },
             ),
           ),

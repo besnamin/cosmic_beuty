@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key, required this.title}) : super(key: key);
@@ -12,7 +13,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   void _signin() {
     setState(() {
-      Navigator.pop(context);
+     Get.offAndToNamed('/');
     });
   }
 
@@ -65,6 +66,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Container(
               margin: const EdgeInsets.all(20.0),
               child: const TextField(
+                obscureText : true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Contraseña',
@@ -86,7 +88,7 @@ class _RegisterPageState extends State<RegisterPage> {
               child: const Text('Volver'),
               color: Colors.pinkAccent,
               onPressed: () {
-                Navigator.pop(context);
+                 Get.offAndToNamed('/');
               },
             ),
           ),

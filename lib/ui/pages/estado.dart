@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
+class EstadoPage extends StatefulWidget {
+  const EstadoPage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<EstadoPage> createState() => _EstadoPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _EstadoPageState extends State<EstadoPage> {
   // Listado de cadenas
   var listado = [
-    Persona("10001", "Ruthford Jay", "Soy de San Andres y me gusta pescar!",
+    Persona("10001", "Diego Andres Sierra", "Relajado",
         "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/sloth_lazybones_sluggard_avatar-128.png"),
     Persona(
         "10002",
-        "Willy Corzo",
-        "Soy de Barranquilla y me gusta el arroz de liza!",
+        "Natali Florez",
+        "Trabajando",
         "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/builder_worker_helmet-128.png"),
-    Persona("10003", "Nataly Imitola", "Soy de Cartagena y me gusta programar!",
+    Persona("10003", "Gabriel Gonzalez", "Dia de futbol",
         "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_person_kid_child-128.png"),
-    Persona("10004", "Andres Tunubala", "Soy de Cauca y me gusta programar!",
+    Persona("10004", "Juan Martinez", "Estudiando en la u",
         "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/indian_man_male_person-128.png"),
-    Persona("10005", "Maria Prieto", "Soy de Bogota y me gusta ajiaco!",
+    Persona("10005", "Victor Gonzalez", "Aburrido",
         "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/female_woman_avatar_portrait_1-128.png"),
   ];
 
@@ -57,16 +57,11 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text(listado[i].name),
-                            const Spacer(),
-                            const Text(
-                              "Codigo: ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(listado[i].id),
+                            
                           ],
                         ),
                         const Text(
-                          "Descripción:",
+                          "Estado:",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         Text(listado[i].desc),
